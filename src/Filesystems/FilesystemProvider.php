@@ -22,6 +22,7 @@ class FilesystemProvider
 
     private function getClassName($type)
     {
+        $type = ucfirst(strtolower($type));
         return "BigName\\DatabaseBackup\\Filesystems\\{$type}Filesystem";
     }
 }
