@@ -1,14 +1,7 @@
 <?php namespace BigName\DatabaseBackup\Databases; 
 
-class MysqlDatabase implements Database
+class MysqlDatabase extends Database
 {
-    private $config;
-
-    public function __construct(array $config)
-    {
-        $this->config = $config;
-    }
-
     public function getDumpCommandLine($outputPath)
     {
         return sprintf('mysqldump --host=%s --port=%s --user=%s --password=%s %s > %s',
